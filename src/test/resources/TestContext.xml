@@ -5,6 +5,7 @@
 	xmlns:util="http://www.springframework.org/schema/util"
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
 	xsi:schemaLocation="
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
@@ -44,5 +45,19 @@
         class="org.springframework.orm.hibernate3.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
+    
+    <!--  JPA Stuff -->
+   <bean id="entityManager"
+ 	class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+   <property name="dataSource" ref="dataSource" />
+   <property name="packagesToScan" value="forecast" />
+   <property name="jpaVendorAdapter">
+      <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+         <property name="showSql" value="true" />
+         <property name="generateDdl" value="true" />
+         <property name="databasePlatform" value="org.hibernate.dialect.HSQLDialect" />
+      </bean>
+   </property>
+</bean>
 
 </beans>

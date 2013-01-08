@@ -16,12 +16,15 @@ import forecast.service.ActivityService;
 @ContextConfiguration(value = "/TestContext.xml")
 public class ActivityServiceIntegrationTest {
 	@Autowired
-	private ActivityService activityService;	
+	private ActivityService activityService;
+	
+	private static long id;
 	
 	@Before
 	public void setUp() {
-		Activity activity = new Activity();
+		Activity activity = new Activity();		
 		activityService.saveActivity(activity);
+		id = activity.getId();
 	}
 	
 	
@@ -31,12 +34,13 @@ public class ActivityServiceIntegrationTest {
 		activityService.saveActivity(activity);	
 		//Check that id was generated in saving
 		assertTrue(activity.getId() > 0);	
+		System.out.println(activity.getId());
 	}
 	
 	@Test
 	public void testGetActivity() {	
-		Activity activity = activityService.getActivity(1);
-		assertEquals(new Long(1),activity.getId());
+		Activity activity = activityService.getActivity(id);		
+		assertEquals(new Long(id),activity.getId());
 	}
 	
 	
