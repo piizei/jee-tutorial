@@ -16,7 +16,6 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name = "Activities")
 public class Activity {
 	
-	
 	Long id;
 	
 	Date startDate;
@@ -43,7 +42,7 @@ public class Activity {
 	}
 
 	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
+		this.startDate = startDate;		
 	}
 
 	public String getType() {

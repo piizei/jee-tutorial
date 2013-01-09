@@ -48,7 +48,7 @@
 						  				Start Date <form:errors path="startDate"/>
 									</form:label>
 									<div class="controls">												 
-					                    <form:input path="startDate" size="16" placeholder="15-01-2013" class="datepicker" data-date-format="dd-mm-yyyy"/>	                    
+					                    <form:input path="startDate" size="16" placeholder="15-01-2013" class="datepicker" data-date-format="dd-mm-yyyy"/>					                    	                   
 									</div>
 								</div>
 								<div class="control-group <c:if test="${status.error}">error</c:if>">

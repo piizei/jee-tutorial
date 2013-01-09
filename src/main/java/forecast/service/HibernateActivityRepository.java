@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Repository;
@@ -14,6 +15,11 @@ import forecast.domain.Activity;
 @Repository("hibernateActivityRepository")
 @Transactional
 public class HibernateActivityRepository implements ActivityRepository{
+	
+	public static void main(String [] params) {
+		
+		
+	}
 	
 	 private HibernateTemplate hibernateTemplate;
 	 	 

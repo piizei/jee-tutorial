@@ -49,12 +49,12 @@ public class ActivityController {
 
 	/**
 	 * Return edit page with empty Activity object (to create a new)
+	 * 	 
 	 * 
 	 * @return
 	 */
 	@RequestMapping(value = "/activity/create", method = RequestMethod.GET)
 	public String create() {
-		
 		return "activity/create";
 	}
 
@@ -80,6 +80,9 @@ public class ActivityController {
 			//Remove activity object from session
 			sessionStatus.setComplete();
 			// Return to list view
+			/*Set activities = activityService.listActivities();
+			model.addAttribute("activities", activities);
+			return "activity/index";*/
 			return index(m);
 		}
 	}

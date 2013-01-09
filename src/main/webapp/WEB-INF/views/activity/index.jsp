@@ -33,7 +33,7 @@
 				      </tr>
 				    </thead>
 				    <tbody>				 
-					 	<c:forEach var="activity" items="${activities}">
+					 	<c:forEach var="activity" items="${aktiviteetit}">
 					       <tr>
 					        <td>${activity.id}</td>
 					        <td>${activity.type}</td>

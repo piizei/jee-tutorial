@@ -24,7 +24,7 @@ public class ForecastService implements ForecastRepository{
 	
 	@Autowired(required=false)
 	ForecastRepository forecastRepository;	
-
+	
 	public void saveForecast(Forecast forecast) {
 		forecastRepository.saveForecast(forecast);		
 	}
