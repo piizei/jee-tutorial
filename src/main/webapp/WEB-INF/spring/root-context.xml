@@ -23,15 +23,10 @@
 	<!-- Scan Spring components from source packages -->
 	<context:component-scan base-package="forecast" />
 
-	<!-- Embedded HSQLDB test database
+	<!-- Embedded HSQLDB test database-->
 	<jdbc:embedded-database id="dataSource" type="HSQL">
-	</jdbc:embedded-database>-->
-	 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://dbhost-prospring-psql/prospring"/>
-        <property name="username" value="sa"/>
-        <property name="password" value=""/>
-    </bean>
+	</jdbc:embedded-database>
+
 	<!-- support for transaction -->
 	<tx:annotation-driven />
 	<!-- Hibernate stuff -->

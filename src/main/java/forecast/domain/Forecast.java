@@ -4,6 +4,10 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+import javax.persistence.Transient;
+
 public class Forecast {
 	
 	Set <Activity> activities;
@@ -11,6 +15,7 @@ public class Forecast {
 	Date startDate;
 	Date endDate;
 	
+	@Transient
 	public int getTotalPercentage() {
 		int total = 0;
 		for(Activity a : activities) {			
@@ -19,6 +24,7 @@ public class Forecast {
 		return total;
 	}
 
+	@OneToMany
 	public Set<Activity> getActivities() {
 		return activities;
 	}
