@@ -79,10 +79,7 @@ public class ActivityController {
 			activityService.saveActivity(activity);
 			//Remove activity object from session
 			sessionStatus.setComplete();
-			// Return to list view
-			/*Set activities = activityService.listActivities();
-			model.addAttribute("activities", activities);
-			return "activity/index";*/
+			// use our index-method to return a list model and go to index page
 			return index(m);
 		}
 	}

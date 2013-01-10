@@ -2,6 +2,8 @@ package forecast;
 
 import static org.junit.Assert.*;
 
+import java.util.Set;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -41,6 +43,18 @@ public class ActivityServiceIntegrationTest {
 	public void testGetActivity() {	
 		Activity activity = activityService.getActivity(id);		
 		assertEquals(new Long(id),activity.getId());
+	}
+	
+	@Test
+	public void testListActivity() {	
+		Activity a1 = new Activity();	
+		Activity a2 = new Activity();
+		activityService.saveActivity(a1);
+		activityService.saveActivity(a2);	
+		
+		Set <Activity> activities = activityService.listActivities();
+		
+		assertTrue(activities.size()>1);
 	}
 	
 	
